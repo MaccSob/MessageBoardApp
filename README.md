@@ -1,4 +1,4 @@
 # Message Board app  
 
 
-Message board 
+Project: Mini Message Board - NodeJS/Express.

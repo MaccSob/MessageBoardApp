@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/MaccSob/MessageBoardApp/issues"
   },
-  "homepage": "https://github.com/MaccSob/MessageBoardApp#readme"
+  "homepage": "https://github.com/MaccSob/MessageBoardApp#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
 }

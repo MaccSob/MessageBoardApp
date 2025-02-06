@@ -1,40 +1,12 @@
-import http from 'http';
-import path from 'path';
+import express from 'express';
+const app = express();
 
-const PORT = process.env.PORT;
-
-
-const server = http.createServer(async(req, res) => {
-
-    try {
-        // if get request
-        if (req.method ='GET') {
-            let filePath;
-            if (req.url === '/') {
-                filePath = path.join(__dirname, 'public', 'index.html');
-           
-               } else if(req.url === '/about') {
-                filePath = path.join(__dirname, 'public', 'about.html');
-               } else {
-                   throw new Error('Not found');
-               }
-               const data = await fs.readFile(filePath);
-               res.setHeader('Content-type', 'text/html');
-               res.write(data);
-               res.end();
-                    } else {
-            throw new Error('Method not allowed');
-        }
-    } catch (error) {
-        res.writeHead(500, {'Content-Type': 'text/plain'})
-        res.end("<h2>Server error</h2>");
-    }
-
-
-
-    
+app.get('/', (req, res) => {
+  res.send('Home Page')
 });
 
-server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+app.get('/log', (req, res) => {
+  res.send('Log Page')
+})
+
+app.listen(3000, () => console.log('Server Started'))

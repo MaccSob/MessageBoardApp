@@ -17,13 +17,17 @@ const messages = [
      text: "Hello World!",
      user: "Charles",
      added: new Date()
-   }
- ];
+   },
+   {
+   text: "Hey folks!",
+   user: "Jacob",
+   added: new Date()
+   } 
+];
+
 
  indexRouter.get('/', (req, res) => {
    res.render("index", { title: "Mini Messageboard", messages: messages })
  });
- indexRouter.get('/new', (req, res) => {
-    res.render('new')
- })
+
  module.exports = indexRouter;

@@ -1,13 +1,17 @@
 const express = require('express');
 const indexRouter = require("./routes/indexRouter");
-const newRouter = require('./routes/newRouter');
+const path = require('path');
+const router = require('./routes/indexRouter');
 
 const server = express();
 
 
 server.set('view engine', 'ejs');
+server.set('views', path.join(__dirname, 'views'));
+
+
+
 server.use("/", indexRouter);
-server.use("/new", newRouter);
 
 
 

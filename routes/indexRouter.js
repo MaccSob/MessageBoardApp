@@ -30,4 +30,8 @@ const messages = [
    res.render("index", { title: "Mini Messageboard", messages: messages })
  });
 
+ indexRouter.get("/new", function(req, res) {
+    res.render("new", { title: "Input Form" });
+  });
+
  module.exports = indexRouter;

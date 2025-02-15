@@ -31,7 +31,7 @@ const messages = [
  });
 
  indexRouter.get("/new", function(req, res) {
-    res.render("new", { title: "Input Form" });
+    res.render("new", { title: "Create your message!" });
   });
 
  module.exports = indexRouter;

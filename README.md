@@ -1,10 +1,9 @@
 # Mini Message Board app  
 
 
-Project: Mini Message Board - NodeJS/Express.
+Project: Mini Message Board - NodeJS/Express/EJS.
 
-First real project using Node,EJS,Express.
 
-it's a message board with Node Server.
 
+Multi-page app - that allows user to submit a message, and stories it in its memory. My first project that uses HTTP requests, servers, routing etc. 
 

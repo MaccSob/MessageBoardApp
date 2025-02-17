@@ -43,8 +43,6 @@ const messages = [
 
       console.log("Text: ", data.messageText);
       console.log("User: ", data.messageUser);
-  
-      res.send();
 
       messages.push({ text: req.body.messageText, user: req.body.messageUser, added: new Date() });
 

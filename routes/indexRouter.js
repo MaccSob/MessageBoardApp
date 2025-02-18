@@ -43,6 +43,7 @@ const messages = [
 
       console.log("Text: ", data.messageText);
       console.log("User: ", data.messageUser);
+      console.log("Date: ", new Date());
 
       messages.push({ text: req.body.messageText, user: req.body.messageUser, added: new Date() });
 

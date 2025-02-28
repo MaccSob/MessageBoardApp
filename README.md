@@ -1,7 +1,7 @@
 # Mini Message Board app  
 
 
-Project: Mini Message Board - NodeJS/Express/EJS.
+Project: Mini Message Board - NodeJS/Express/EJS/PostresSQL(soontm).
 
 
 

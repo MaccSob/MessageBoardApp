@@ -3,10 +3,10 @@ const fs = require('fs');
 
 // Database connection configuration
 const dbConfig = {
-  user: 'locahost',
-  host: 'locahost',
-  database: 'messages',
-  password: 'password',
+  user: DATABASE_USER,
+  host: DATABASE_HOST,
+  database: DATABASE_NAME,
+  password: DATABASE_PASSWORD,
   port: 5432, 
 };
 

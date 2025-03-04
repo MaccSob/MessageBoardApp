@@ -1,24 +1,31 @@
-async function populateDB(messages, data) {
-    const client = new Client(dbConfig);
+const { Client } = require("pg");
+const CONNECT_NAME = process.env.CONNECT_NAME;
+require("dotenv").config();
 
-  
-    try {
-      await client.connect();
-      const messages = 'messages'; // Replace with your actual table name
-  
-      const insertQuery = `
-        INSERT INTO "${messages}"."${messages}" ("column1", "column2", "column3")
-        VALUES ($1, $2, $3)
-      `;
-  
-      for (const row of data) {
-        await client.query(insertQuery, [row.column1, row.column2, row.column3]);
-      }
-  
-      console.log(`Data inserted into ${messages}.${messages}`);
-    } catch (err) {
-      console.error(`Error inserting data into ${messages}:`, err);
-    } finally {
-      await client.end();
-    }
-  }
+const SQL = `
+CREATE TABLE IF NOT EXISTS messages (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  username VARCHAR ( 25 ),
+  text VARCHAR (50),
+  date TIMESTAMP,
+);
+
+INSERT INTO messages (username) 
+VALUES
+  ('Bryan'),
+  ('Odin'),
+  ('Damon');
+`;
+
+async function main() {
+  console.log("seeding...");
+  const client = new Client({
+    connectionString: CONNECT_NAME,
+  });
+  await client.connect();
+  await client.query(SQL);
+  await client.end();
+  console.log("done");
+}
+
+main();

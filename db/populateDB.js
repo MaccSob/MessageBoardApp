@@ -1,5 +1,4 @@
 const { Client } = require("pg");
-const CONNECT_NAME = process.env.CONNECT_NAME;
 require("dotenv").config();
 
 const SQL = `
@@ -20,7 +19,7 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: CONNECT_NAME,
+    connectionString: process.env.CONNECT_NAME,
   });
   await client.connect();
   await client.query(SQL);
